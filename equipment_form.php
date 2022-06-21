@@ -7,19 +7,28 @@
 <body>
 <h3>Форма ввода данных</h3>
 <form action="create.php" method="POST">
-  <select name="equipment" size="1">
-    <option value="TP-Link TL-WR74">TP-Link TL-WR74</option>
-    <option value="D-Link DIR-300">D-Link DIR-300</option>
-    <option value="D-Link DIR-300 S">D-Link DIR-300 S</option>
-  </select><br>
-  <p>Краткий комментарий (материться можно): <br>
-    <textarea name="comment" maxlength="200"></textarea></p>
+<?php
+include "DB\core.php";
+$conn = connect_table("equipment");
+$sql = "SELECT id, name FROM equipment_template";
+if($result = $conn->query($sql)) {
+    echo "<select name = 'equipment' size='1''>";
+    echo "<option disabled>Выберите оборудование</option>";
+    while ($row = mysqli_fetch_array($result)) {
+        echo "<option value ='" . $row["id"] . "'>" . $row["name"] . "</option>";
+    }
+    echo "</select>";
+}
+?>
+  <p>Серийный номер оборудования: <br>
+      <label>
+          <textarea name="comment" maxlength="254"></textarea>
+      </label></p>
   <input type="submit" value="Отправить">
 
 </form>
 
 <?php
-$conn = new mysqli("localhost", "root", "Ghjvfd!2", "equipment");
 if($conn->connect_error){
   die("Ошибка: " . $conn->connect_error);
 }
