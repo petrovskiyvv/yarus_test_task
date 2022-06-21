@@ -11,7 +11,7 @@ if(isset($_POST["equipment"]) && isset($_POST["comment"]))
         if (preg_match($row["mask"], $comment)) {
             $sql = "INSERT INTO equipment_list (name, serial_num) VALUES ('$row[name]', '$comment')";
             if($conn->query($sql)){
-                header("Location: equipment_form.php");
+                header("Location: index.php");
             }
             else {
                 echo "Ошибка: " . $conn->error;
