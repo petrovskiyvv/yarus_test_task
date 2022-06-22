@@ -40,8 +40,13 @@
                 При одновременном вводе нескольких номеров, необходимо их разделять переносом строки.
             </div>
             <br>
-            <div class="d-grid gap-2 justify-content-md-end-auto">
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Отправить</button>
+            <div class="row gy-3">
+                <div class="d-grid gap-2 justify-content-md-end-auto">
+                    <button class="w-100 btn btn-lg btn-primary" type="submit">Отправить</button>
+                </div>
+                <div class="d-grid gap-2 justify-content-md-end-auto">
+                    <button class="w-100 btn btn-lg btn-primary" formaction="/table.php" type="submit">Перейти к таблице</button>
+                </div>
             </div>
         </form>
         </div>
