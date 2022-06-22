@@ -15,7 +15,7 @@
     $conn = connect_table("equipment");
     $sql = "SELECT * FROM equipment_list";
     if($result = $conn->query($sql)) {
-        echo "<table class='table table-striped'><tr><th scope='col'>Id</th><th scope='col'>Модель</th><th scope='col'>Серийный номер</th></tr>";
+        echo "<table class='table table-striped'><tr><th scope='col'>ID</th><th scope='col'>Модель</th><th scope='col'>Серийный номер</th></tr>";
         foreach ($result as $row) {
             echo "<tr>";
             echo "<td>" . $row["id"] . "</td>";
