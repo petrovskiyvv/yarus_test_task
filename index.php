@@ -16,9 +16,6 @@
             <p class="h3">Пожалуй, лучшая форма для ввода данных в мире, да что там в мире - в России!</p>
         </figure>
         <br>
-        <div class="col-12">
-            <label for="equipment" class="form-label">Модель оборудования: </label>
-        </div>
         <form action="create.php" method="POST">
             <?php
             include "DB\core.php";
@@ -26,7 +23,7 @@
             $sql = "SELECT id, name FROM equipment_template";
             if($result = $conn->query($sql)) {
                 echo "<select class='form-select' name = 'equipment'>";
-                echo "<option disabled>Выберите оборудование</option>";
+                echo "<option value='none' selected disabled hidden>Выберете модель</option>";
                 while ($row = mysqli_fetch_array($result)) {
                     echo "<option value ='" . $row["id"] . "'>" . $row["name"] . "</option>";
                 }
@@ -35,7 +32,6 @@
             ?>
             <br>
             <div class="mb-2">
-                <label for="comment" class="form-label">Серийный номер оборудования: </label>
                 <textarea id='textarea' name="comment" class="form-control" placeholder="Введите SN оборудования" rows="1"></textarea>
                 <script>
                     autosize(document.querySelectorAll('textarea'));
