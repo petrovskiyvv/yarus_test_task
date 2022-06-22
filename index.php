@@ -10,7 +10,6 @@
     <body class="text-center vsc-initialized">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/autosize.js/3.0.15/autosize.min.js'></script>
-        <div class="col-md" style="background-color: whitesmoke">
         <div class="container">
         <figure class="text-center">
             <p class="h3">Пожалуй, лучшая форма для ввода данных в мире, да что там в мире - в России!</p>
@@ -50,7 +49,6 @@
                 </div>
             </div>
         </form>
-        </div>
         </div>
     </body>
 </html>
