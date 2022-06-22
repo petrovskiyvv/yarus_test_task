@@ -19,3 +19,37 @@ body {
     margin-right: auto;
     max-width: 500px;
 }
+table {
+    box-shadow: 0 2px  4px 0 rgba(0,0,0,.3);
+    font-size: 14px;
+    border-radius: 10px;
+    border-spacing: 0;
+    text-align: center;
+
+    margin-top:20px;
+    margin-bottom:20px;
+}
+th{
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    border-color: #000000;
+}
+th:first-child, td:first-child {
+    text-align: left;
+}
+th:first-child {
+    border-top-left-radius: 10px;
+}
+th:last-child {
+    border-top-right-radius: 10px;
+    border-right: none;
+}
+tr:last-child td:first-child {
+    border-radius: 0 0 0 10px;
+}
+tr:last-child td:last-child {
+    border-radius: 0 0 10px 0;
+}
+tr td:last-child {
+    border-right: none;
+}
