@@ -7,11 +7,6 @@
 }
 body {
     font-family: "Roboto", "Arial", sans-serif;
-}
-textarea{
-    resize: none;
-}
-body {
     background: whitesmoke;
     margin-top:100px;
     margin-bottom:50px;
@@ -19,13 +14,15 @@ body {
     margin-right: auto;
     max-width: 500px;
 }
+textarea{
+    resize: none;
+}
 table {
     box-shadow: 0 2px  4px 0 rgba(0,0,0,.3);
     font-size: 14px;
     border-radius: 10px;
     border-spacing: 0;
     text-align: center;
-
     margin-top:20px;
     margin-bottom:20px;
 }
