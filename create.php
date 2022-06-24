@@ -4,26 +4,32 @@ if(isset($_POST["equipment"]) && isset($_POST["comment"]))
 {
     $conn = connect_table("equipment");
     $equipment = $conn->real_escape_string($_POST["equipment"]);
-    $comment = $conn->real_escape_string($_POST["comment"]);
+    $id = $conn->real_escape_string($_POST["comment"]);
+    $arr_id = explode("\\n", $id);
+    $flag_sent = 0;
+    $flag_duplicate = 0;
+    $bad_id = array();
     $sql = "SELECT mask, name FROM equipment_template WHERE id = '$equipment'";
     if($result = $conn->query($sql)) {
         $row = mysqli_fetch_array($result);
-        if (preg_match($row["mask"], $comment)) {
-            $sql = "INSERT INTO equipment_list (name, serial_num) VALUES ('$row[name]', '$comment')";
-            if($conn->query($sql)){
-                header("Location: index.php");
+        foreach($arr_id as $uniq_id) {
+            if (preg_match($row["mask"], $uniq_id)) {
+                $sql = "INSERT INTO equipment_list (name, serial_num) VALUES ('$row[name]', '$uniq_id')";
+                try  {
+                    $conn->query($sql);
+                    $flag_sent = 1;
+                    echo "Успешно отправленно: " . $uniq_id . "<br>";
+                }
+                catch (Throwable $ex) {
+                    $flag_duplicate = 1;
+                    echo "Уже имеется в базе: " . $uniq_id . "<br>";
+                }
             }
             else {
-                echo "Ошибка: " . $conn->error;
+                echo "Не соотвествует маске оборудования: " . $uniq_id . "<br>";
             }
         }
-        else {
-            echo "Ошибка: введенное значение SN не соотвествует устройству";
-        }
     }
+    $conn->close();
 }
-
-
-$conn->close();
-
 ?>
