@@ -29,8 +29,18 @@ CREATE TABLE `equipment_template` (
   `name` char(254) NOT NULL,
   `mask` char(254) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `equipment_template`
+--
+
+LOCK TABLES `equipment_template` WRITE;
+/*!40000 ALTER TABLE `equipment_template` DISABLE KEYS */;
+INSERT INTO `equipment_template` VALUES (1,'TP-Link TL-WR74','/^[0-9A-Z]{2}[A-Z]{5}[0-9A-Z][A-Z]{2}$/'),(2,'D-Link DIR-300','/^[0-9][0-9A-Z]{2}[A-Z]{2}[0-9A-Z][^-_@][0-9A-Z][a-z]{2}$/'),(3,'D-Link DIR-300 S','/^[0-9][0-9A-Z]{2}[A-Z]{2}[0-9A-Z][^-_@][0-9A-Z]{3}$/');
+/*!40000 ALTER TABLE `equipment_template` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -41,4 +51,4 @@ CREATE TABLE `equipment_template` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-24 21:55:39
+-- Dump completed on 2022-06-25  5:27:13
