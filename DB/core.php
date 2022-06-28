@@ -1,9 +1,11 @@
 <?php
 function connect_table($table_name)
 {
-    $hostname = "имя хоста, на котором находится база данных";
-    $username = "имя пользователя";
-    $password = "пароль пользователя";
+    $ini = parse_ini_file(__DIR__ . '/../vendor/settings.ini');
+
+    $hostname = $ini['hostname'];
+    $username = $ini['username'];
+    $password = $ini['password'];
 
     $conn = new mysqli($hostname, $username, $password, $table_name);
     if ($conn->connect_error) {
