@@ -12,7 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <button class="w-100 btn btn-lg btn-primary" onclick="history.back();" type="submit">Вернуться к форме</button>
     <?php
-    include "DB/core.php";
+    include __DIR__ . '/DB/core.php';
     $conn = connect_table("equipment");
     $sql = "SELECT * FROM equipment_list";
     if($result = $conn->query($sql)) {
