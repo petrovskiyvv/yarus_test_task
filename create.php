@@ -2,7 +2,7 @@
 include __DIR__ . '/DB/core.php';
 if(isset($_POST["equipment"]) && isset($_POST["comment"]))
 {
-    $ini = parse_ini_file(__DIR__ . '/vendor/settings.ini');
+    $ini = parse_ini_file(__DIR__ . '/DB/settings.ini');
 
     $conn = connect_db($ini['db_name']);
     $equipment = $conn->real_escape_string($_POST["equipment"]);

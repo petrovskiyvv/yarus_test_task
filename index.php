@@ -49,7 +49,7 @@
     <form action="create.php" method="POST">
         <?php
         include "DB\core.php";
-        $ini = parse_ini_file(__DIR__ . '/vendor/settings.ini');
+        $ini = parse_ini_file(__DIR__ . '/DB/settings.ini');
 
         $conn = connect_db($ini['db_name']);
         $sql = "SELECT id, name FROM equipment_template";

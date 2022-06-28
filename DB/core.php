@@ -1,7 +1,7 @@
 <?php
 function connect_db($db_name)
 {
-    $ini = parse_ini_file(__DIR__ . '/../vendor/settings.ini');
+    $ini = parse_ini_file(__DIR__ . '/settings.ini');
 
     $hostname = $ini['hostname'];
     $username = $ini['username'];
