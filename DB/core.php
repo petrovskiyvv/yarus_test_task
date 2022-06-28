@@ -1,5 +1,5 @@
 <?php
-function connect_table($db_name)
+function connect_db($db_name)
 {
     $ini = parse_ini_file(__DIR__ . '/../vendor/settings.ini');
 

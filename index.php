@@ -49,7 +49,7 @@
     <form action="create.php" method="POST">
         <?php
         include "DB\core.php";
-        $conn = connect_table("equipment");
+        $conn = connect_db("equipment");
         $sql = "SELECT id, name FROM equipment_template";
         if($result = $conn->query($sql)) {
             echo "<select class='form-select' name = 'equipment' id = 'equipment' required>";

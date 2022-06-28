@@ -14,7 +14,7 @@
     <?php
     include __DIR__ . '/DB/core.php';
     $ini = parse_ini_file(__DIR__ . '/vendor/settings.ini');
-    $conn = connect_table($ini['db_name']);
+    $conn = connect_db($ini['db_name']);
     $sql = "SELECT * FROM equipment_list";
     if($result = $conn->query($sql)) {
         echo "<table class='table table-striped'><tr><th scope='col'>ID</th><th scope='col'>Модель</th><th scope='col'>Серийный номер</th></tr>";

@@ -4,7 +4,7 @@ if(isset($_POST["equipment"]) && isset($_POST["comment"]))
 {
     $ini = parse_ini_file(__DIR__ . '/vendor/settings.ini');
 
-    $conn = connect_table("equipment");
+    $conn = connect_db("equipment");
     $equipment = $conn->real_escape_string($_POST["equipment"]);
     $id = $conn->real_escape_string($_POST["comment"]);
     $arr_id = explode("\\n", $id);
