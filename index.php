@@ -49,7 +49,9 @@
     <form action="create.php" method="POST">
         <?php
         include "DB\core.php";
-        $conn = connect_db("equipment");
+        $ini = parse_ini_file(__DIR__ . '/vendor/settings.ini');
+
+        $conn = connect_db($ini['db_name']);
         $sql = "SELECT id, name FROM equipment_template";
         if($result = $conn->query($sql)) {
             echo "<select class='form-select' name = 'equipment' id = 'equipment' required>";
