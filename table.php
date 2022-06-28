@@ -14,6 +14,7 @@
     <?php
     include __DIR__ . '/DB/core.php';
     $ini = parse_ini_file(__DIR__ . '/vendor/settings.ini');
+
     $conn = connect_db($ini['db_name']);
     $sql = "SELECT * FROM equipment_list";
     if($result = $conn->query($sql)) {
